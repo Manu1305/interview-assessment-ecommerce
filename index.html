@@ -12,6 +12,7 @@
       <meta name="author" content="" />
       <link rel="shortcut icon" href="https://hitecmart.com/wp-content/uploads/2022/10/20221008_194021_0000.png" type="">
       <title>Hi-tec Mart</title>
+      
       <!-- bootstrap core css -->
       <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
       <!-- font awesome style -->
@@ -20,12 +21,16 @@
       <link href="css/style.css" rel="stylesheet" />
       <!-- responsive style -->
       <link href="css/responsive.css" rel="stylesheet" />
-
+<meta name="theme-color" content="yellow">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-startup-image" href="images/hitec1.png"
+   media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
 
       <style>
          @media screen and (max-width: 768px) {
             .hero-image {
-               display: none;
+              display: none;
+
             }
          }
       </style>
@@ -117,6 +122,14 @@
                            <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
                            <i class="fa fa-search" aria-hidden="true"></i>
                            </button>
+<div class="add-to">
+<button class="btndownload  my-2 my-sm-0 nav_search-btn" type="submit">
+   <i class="fa fa-download" aria-hidden="true"></i>
+</button>
+</div>
+                          
+
+
                         </form>
                      </ul>
                   </div>
@@ -127,7 +140,7 @@
          <!-- slider section -->
          <section class="slider_section ">
             <div class="slider_bg_box">
-               <img src="images/hero.png"  class="hero-image" style="max-width:100%; height:auto;max-width:90%; float: right;" alt="">
+               <img src="images/moneysave.jpg" style="margin-right: 0; width: 110%;" class="hero-image"  alt="">
             </div>
             <div id="customCarousel1" class="carousel slide" data-ride="carousel">
                <div class="carousel-inner">
@@ -535,7 +548,7 @@
                            Men's Shirt
                         </h5>
                         <h6>
-                           💵400 rs/-
+                           400 rs/-
                         </h6>
                      </div>
                   </div>
@@ -545,7 +558,7 @@
                      <div class="option_container">
                         <div class="options">
                            <a href="" class="option1">
-                           Add To Cart
+                           Add To Bag
                            </a>
                            <a href="" class="option2">
                            Buy Now
@@ -570,7 +583,7 @@
                      <div class="option_container">
                         <div class="options">
                            <a href="" class="option1">
-                           Add To Cart
+                           Add To Bag
                            </a>
                            <a href="" class="option2">
                            Buy Now
@@ -620,7 +633,7 @@
                      <div class="option_container">
                         <div class="options">
                            <a href="" class="option1">
-                           Add To Cart
+                           Add To Bag
                            </a>
                            <a href="" class="option2">
                            Buy Now
@@ -645,7 +658,7 @@
                      <div class="option_container">
                         <div class="options">
                            <a href="" class="option1">
-                           Add To Cart
+                           Add To Bag
                            </a>
                            <a href="" class="option2">
                            Buy Now
@@ -670,7 +683,7 @@
                      <div class="option_container">
                         <div class="options">
                            <a href="" class="option1">
-                           Add To Cart
+                           Add To Bag
                            </a>
                            <a href="" class="option2">
                            Buy Now
@@ -710,7 +723,7 @@
                            Men's Shirt
                         </h5>
                         <h6>
-                           210/-
+                           2160/-
                         </h6>
                      </div>
                   </div>
@@ -720,7 +733,7 @@
                      <div class="option_container">
                         <div class="options">
                            <a href="" class="option1">
-                           Add To Cart
+                           Add To Bag
                            </a>
                            <a href="" class="option2">
                            Buy Now
@@ -745,7 +758,7 @@
                      <div class="option_container">
                         <div class="options">
                            <a href="" class="option1">
-                           Add To Cart
+                           Add To Bag
                            </a>
                            <a href="" class="option2">
                            Buy Now
@@ -770,7 +783,7 @@
                      <div class="option_container">
                         <div class="options">
                            <a href="" class="option1">
-                           Add To Cart
+                           Add To Bag
                            </a>
                            <a href="" class="option2">
                            Buy Now
@@ -795,7 +808,7 @@
                      <div class="option_container">
                         <div class="options">
                            <a href="" class="option1">
-                           Add To Cart
+                           Add To Bag
                            </a>
                            <a href="" class="option2">
                            Buy Now
@@ -1040,5 +1053,44 @@
 
 
       </script>
+      
+   
+
+
+
+      </script>
+         <script>
+
+            let deferredPrompt;
+            var div = document.querySelector('.add-to');
+            var button = document.querySelector('.btndownload');
+            div.style.display = 'none';
+
+            window.addEventListener('beforeinstallprompt', (e) => {
+               // Prevent Chrome 67 and earlier from automatically showing the prompt
+               e.preventDefault();
+               // Stash the event so it can be triggered later.
+               deferredPrompt = e;
+               div.style.display = 'block';
+
+               button.addEventListener('click', (e) => {
+                  // hide our user interface that shows our A2HS button
+                  div.style.display = 'none';
+                  // Show the prompt
+                  deferredPrompt.prompt();
+                  // Wait for the user to respond to the prompt
+                  deferredPrompt.userChoice
+                     .then((choiceResult) => {
+                        if (choiceResult.outcome === 'accepted') {
+                           console.log('User accepted the A2HS prompt');
+                        } else {
+                           console.log('User dismissed the A2HS prompt');
+                        }
+                        deferredPrompt = null;
+                     });
+               });
+            });
+
+         </script>
    </body>
 </html>

@@ -22,15 +22,73 @@
       <!-- responsive style -->
       <link href="css/responsive.css" rel="stylesheet" />
 
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href="css/bootstrap-icons.css" rel="stylesheet">
+      <link href="css/form.css" rel="stylesheet">
+
+
+
+      
+      <style>
+         .whats-app {
+  /* Your existing styles here */
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+         .whats-app {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 15px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+    margin-bottom: 120px;
+    margin-right: 120px;
+}
+@media screen and (max-width: 768px) {
+  .whats-app {
+    margin-bottom: 0;
+    margin-right: 0;
+  }
+}
+
+
+.my-float {
+    margin-top: 16px;
+}
+      </style>
       
      
    </head>
    <body class="sub_page">
-      <div class="hero_area">
+      <a class="whats-app" href="#" target="_blank">
+         <i class="fa fa-whatsapp my-float"></i>
+      </a>
+      
+     
          <!-- header section strats -->
          <header class="header_section">
             <div class="container">
-               <nav class="navbar navbar-expand-lg custom_nav-container ">
+               <nav class="navbar navbar-expand-lg custom_nav-container" style="background-color:white;">
                   <a class="navbar-brand" href="index.html"><img width="250" src="https://hitecmart.com/wp-content/uploads/2022/10/20221008_194021_0000.png" alt="#" /></a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class=""> </span>
@@ -41,7 +99,7 @@
                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="blog_list.html">About</a>
+                           <a class="nav-link" href="about.html">About</a>
                         </li>
                         
                         <li class="nav-item">
@@ -118,7 +176,7 @@
             </div>
          </header>
          <!-- end header section -->
-      </div>
+      
       <!-- inner page section -->
       <section class="inner_page_head">
          <div class="container_fuild">
@@ -133,37 +191,7 @@
       </section>
       <!-- end inner page section -->
       <!-- why section -->
-      <section class="why_section layout_padding">
-         <div class="container">
-         
-            <div class="row">
-               <div class="col-lg-8 offset-lg-2">
-                  <div class="full">
-                     <form onsubmit="alert('submited')" id="form" name="myform">
-                        <fieldset>
-                           <span id="name-error" style="color: red;"> </span>
-                           <input type="text" placeholder="Enter your full name" name="name" id="contact-name" onkeyup="validateName()" />
-                           <br>
-                           <span id="email-error" style="color: red;"> </span>
-                           <input type="email" placeholder="Enter your email address" name="email"  id="contact-email" onkeyup="validateEmail()" />
-                           <span style="color: red; border: solid;" id="subjectErr"> </span>
-                           <input type="text" placeholder="Enter subject" name="subject" id='subject' onkeyup="validateSubject()" />
-                           <span id="text-area-error" style="color: red;"></span>
-                           
-                            <textarea placeholder="Enter your message" 
-                             id='text-area' onkeyup="validatetextarea()" ></textarea>
-                           <button type="submit" value="Submit" onclick="return validateForm()"
-                              style="display: block; margin: 0 auto; background-color: white; border: 1px solid black;"
-                              onmouseover="this.style.backgroundColor='red';" onmouseout="this.style.backgroundColor='white';">Submit</button>
-
-                              <span id="submit-error" style="color: red;"> </span>
-                        </fieldset>
-                     </form>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
+      
       <!-- end why section -->
       <!-- arrival section -->
       <!-- <section class="arrival_section">
@@ -192,6 +220,76 @@
       </section> -->
       <!-- end arrival section -->
       <!-- footer section -->
+      <section class="contact-section section-padding" id="section_6">
+         <div class="container">
+            <div class="row">
+      
+               <div class="col-lg-8 col-12 mx-auto">
+                  <h2 class="text-center mb-4"> Let's talk</h2>
+      
+                  <nav class="d-flex justify-content-center">
+                     <div class="nav nav-tabs align-items-baseline justify-content-center" id="nav-tab" role="tablist">
+                        <button class="nav-link active" id="nav-ContactForm-tab" data-bs-toggle="tab"
+                           data-bs-target="#nav-ContactForm" type="button" role="tab" aria-controls="nav-ContactForm"
+                           aria-selected="false">
+                           <h5>Get in Touch Form</h5>
+                        </button>
+      
+                        <button class="nav-link" id="nav-ContactMap-tab" data-bs-toggle="tab" data-bs-target="#nav-ContactMap"
+                           type="button" role="tab" aria-controls="nav-ContactMap" aria-selected="false">
+                           <h5>Find Us Easily</h5>
+                        </button>
+                     </div>
+                  </nav>
+      
+                  <div class="tab-content shadow-lg mt-5" id="nav-tabContent">
+                     <div class="tab-pane fade show active" id="nav-ContactForm" role="tabpanel"
+                        aria-labelledby="nav-ContactForm-tab">
+                        <form class="custom-form contact-form mb-5 mb-lg-0" onsubmit=""  id="form" name="myform" role="form">
+                           
+                           <div class="contact-form-body">
+                              <div class="row">
+                                 <div class="col-lg-6 col-md-6 col-12">
+                                 <span id="name-error" style="color: red;"> </span>
+                                 <input type="text" placeholder="Enter your full name" name="name" id="contact-name" onkeyup="validateName()" />
+                                 </div>
+      
+                                 <div class="col-lg-6 col-md-6 col-12">
+                                    <span id="email-error" style="color: red;"> </span>
+                                    <input type="email" placeholder="Enter your email address" name="email" id="contact-email" onkeyup="validateEmail()" />
+                                 </div>
+                              </div>
+      
+                              <span style="color: red" id="subjectErr"> </span>
+                              <input type="text" placeholder="Enter subject" name="subject" id='subject' onkeyup="validateSubject()" />
+      
+                              <span id="text-area-error" style="color: red;"></span>
+                              
+                              <textarea placeholder="Enter your message" id='text-area' onkeyup="validatetextarea()"></textarea>
+      
+                              <div class="col-lg-4 col-md-10 col-8 mx-auto">
+                                 <button type="submit" value="submit" onclick="return validateForm()" class="form-control">Send message</button>
+                              <span id="submit-error" style="color: red;"> </span>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+      
+                     <div class="tab-pane fade" id="nav-ContactMap" role="tabpanel" aria-labelledby="nav-ContactMap-tab">
+                        <iframe class="google-map"
+                           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.7340136388184!2d77.68715601744383!3d12.988856900000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae115c6cee1349%3A0x22e1ddd34e04eb1b!2sHiTec%20Mart!5e0!3m2!1sen!2sin!4v1680851022272!5m2!1sen!2sin"
+                           width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                           referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                          
+                        <!-- You can easily copy the embed code from Google Maps -> Share -> Embed a map // -->
+                     </div>
+                  </div>
+               </div>
+      
+            </div>
+         </div>
+      </section>
 <footer style="background-color: aliceblue;">
    <div class="container">
       <div class="row">
@@ -293,7 +391,7 @@
       <!-- popper js -->
       <script src="js/popper.min.js"></script>
       <!-- bootstrap js -->
-      <script src="js/bootstrap.js"></script>
+      
       <!-- custom js -->
       <script src="js/custom.js"></script>
 
@@ -313,12 +411,12 @@
                   nameError.innerHTML = 'Name is required';
                   return false;
                }
-               if (!name.match(/^[A-Za-z]+\s{1}[A-Za-z]+$/)) {
+               else if (!name.match(/^[A-Za-z]+\s{1}[A-Za-z]+$/)) {
                   nameError.innerHTML = 'Write full name';
                   return false;
                }
 
-                 if (!name.match(/^[A-Za-z]+(\s[A-Za-z]+)*$/)) {
+                else if (!name.match(/^[A-Za-z]+(\s[A-Za-z]+)*$/)) {
                nameError.innerHTML = 'write full name';
                return false;
             }
@@ -380,7 +478,8 @@
           function validatetextarea(){
     var text = document.getElementById('text-area').value
     if(text.length <=10){
-        textError.innerHTML = "required Some more letters"
+        const difference = Math.abs(text.length - 11);
+        textError.innerHTML = `required ${difference} more letter`
         return false
     }
     textError.innerHTML = '<i class="fa-solid fa-circle-check"style="color: green;"></i>';
@@ -391,19 +490,34 @@
    function validateForm() {
       if (!validateName() || !validateSubject() || !validateEmail() || !validatetextarea()) {
          submitError.style.display = "block"
-         submitError.innerHTML = 'PLEASE FILL ALL FORM TO CONTINUE'
-         setTimeout(function () { submitError.style.display = 'none'; }, 3000)
-         return false;
+         submitError.innerHTML ="Please  fill the blanks!"
+         setTimeout(function () { submitError.style.display = 'none'; }, 5000)
+         return false;  
 
       }
 
 
    }
-   function submit(){
-      alert("okk right")
-   }
 
       </script>
+     <script>
+      const form = document.getElementById('form');
+      form.addEventListener('submit', function (event) {
+         event.preventDefault(); // prevent form submission
+         const contactname = form.elements['name'].value;
+         Swal.fire(`Thank you, ${contactname}!`).then(() => {
+            form.reset();
+            
+         })
+      });
+   </script>
+
+
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="sweetalert2.all.min.js"></script>
+<script src="sweetalert2.min.js"></script>
+<link rel="stylesheet" href="sweetalert2.min.css">
+<script src="./js/bootstrap.min.js"></script>
 
 
    </body>
